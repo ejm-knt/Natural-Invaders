@@ -9,8 +9,7 @@ public class Carrot : CharacterScript
     // private bool isSwordOn = false; // Swordオブジェクトのオン/オフの状態を管理
     // private bool isShieldOn = false; // Shieldオブジェクトのオン/オフの状態を管理
     private Vector3 startPos;
-    [SerializeField] ParticleSystem hiteffect1;
-    [SerializeField] ParticleSystem hiteffect2;
+    [SerializeField] ParticleSystem carrotAttack;
 
     public Carrot() : base("Carrot", 20, 10, 8, 20, 0, 0, 12)
     {
@@ -45,12 +44,9 @@ public class Carrot : CharacterScript
         }
 
         // 0.2秒待機
-        hiteffect1.Play();
+        carrotAttack.Play();
         yield return new WaitForSeconds(waitTime);
-        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se17TomatoAttac4);
-        hiteffect2.Play();
-        yield return new WaitForSeconds(waitTime);
-        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se17TomatoAttac4);
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se04CarrotAttack2);
 
         // Enemyの位置から最初の位置へ移動
         elapsed = 0;

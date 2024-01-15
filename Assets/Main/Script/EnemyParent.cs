@@ -29,7 +29,7 @@ public abstract class EnemyParent : MonoBehaviour
     //! Enemy詳細ステータス群
     private bool enemyChargeFlag = false;           //!「溜める」管理フラグ
     private int enemyChargeMagnification = 2;       //!「溜める」倍率
-    [SerializeField] private int enemyHealValue;    //! 回復値
+    private int enemyHealValue;    //! 回復値
 
     //! 各getter,setter
     public string EnemyName { get => enemyName; set => enemyName = value; }
@@ -63,7 +63,7 @@ public abstract class EnemyParent : MonoBehaviour
     public event OnLifeChangedDelegate OnLifeChanged;
 
     //! Enemy初期化時のステータス管理
-    public void Initialize(EnemyKind enemyKind, int enemyHealValue)
+    public void Initialize(EnemyKind enemyKind)
     {
         switch (enemyKind)
         {
@@ -72,7 +72,7 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 500;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 100;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             case EnemyKind.mantis:
@@ -80,7 +80,7 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 1000;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 200;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             case EnemyKind.bee:
@@ -88,7 +88,7 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 1500;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 300;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             case EnemyKind.beetle:
@@ -96,7 +96,7 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 40;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 8;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             default:

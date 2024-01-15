@@ -8,7 +8,7 @@ public class BeetleEnemyChild : EnemyParent
     // public List<CharacterScript> characters = new();
     private void Awake()
     {
-        Initialize(EnemyKind.beetle, EnemyHealValue);
+        Initialize(EnemyKind.beetle);
         // Debug.Log(EnemyLife);
     }
 
