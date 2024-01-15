@@ -5,38 +5,8 @@ using UnityEngine.UI;
 
 public class FarmField : MonoBehaviour
 {
-    //このクラスの役割
-    //畑画面に必要な処理全般を行う
-    //1.種状態のものをスクロールビューに追加する
-    //2.種(field == true)のものを畝(ウネ)に表示する
-    //3.畑に種があるなら、その畑ボタンは押せないようにする
-    //4.畑に種があるなら、その種インスタンスのボタンは押せないようにする
-
-    //public int fresh;//プレイヤーごとの鮮度を保存
-    public int FRESHCOUNT = 1;//戦闘終了時に鮮度が進む(定数)
-    //public CharacterScript[] characters;//動作確認用のキャラクター配列
-
-    //public SeedScript seeds;//確認用seedスクリプト
     public bool isEnpty;
-    public int farmField;
-
-    //[SerializeField] Button button;
-
-    // List<FujiedaTomato> PlantedSeedCharacters = new List<FujiedaTomato>();
-    // public void SetSeedButton() //PlantedSeedCharacters(植えた種リスト)にキャラクターを追加
-    // {
-    //     TestGameDirector.PlantedSeedCharacters[1];
-
-    //     // for (int i = 0; i < characters.Length; i++)
-    //     // {
-    //     //     if (characters[i].position == 0) return;//ポジション0の場合はリターン
-
-    //     //     for (int j = 1; j < 6; j++)
-    //     //     {//ポジションが0以外の場合
-    //     //         characters[i].tag = "PartyMember" + j;//実行するとオブジェクトに新しいタグを追加。
-    //     //     }
-    //     // }
-    // }
+    public int farmFieldPos;
 
     public void FarmNotSeed()//ボタンを押せなくするメソッド
     {
@@ -60,12 +30,6 @@ public class FarmField : MonoBehaviour
         {
             FarmNotSeed();
         }
-
-        // for (int i = 0; i < characters.Length; i++)
-        // {
-        //     if (characters[i].position == 0) return;//ポジション0の場合はリターン
-        //     button.interactable = false;
-        // }
     }
 
 }

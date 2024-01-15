@@ -36384,6 +36384,7 @@ GameObject:
   - component: {fileID: 522479960586340244}
   - component: {fileID: 4203226575530829561}
   - component: {fileID: 5339460317002060438}
+  - component: {fileID: 5339460317002060439}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -36408,6 +36409,27 @@ MonoBehaviour:
   chargePrefab: {fileID: 945945755012645889, guid: c32e6172b6860254b8460f5f2bff348b, type: 3}
   characters: []
   enemyHealValue: 20
+--- !u!135 &5339460317002060439
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339460317002060437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.59
+  m_Center: {x: 0, y: 0.27, z: 0.11}
 --- !u!137 &5567334668176734042
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

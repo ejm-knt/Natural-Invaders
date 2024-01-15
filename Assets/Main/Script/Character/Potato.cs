@@ -22,13 +22,13 @@ public class Potato : CharacterScript
         // 固有キャラの前列行動の処理を追加
     }
 
-    void ToggleSword()
-    {
-        // オンの場合はオフに、オフの場合はオンにする
-        Sword.SetActive(!isSwordOn);
-        // 状態を反転
-        isSwordOn = !isSwordOn;
-    }
+    // void ToggleSword()
+    // {
+    //     // オンの場合はオフに、オフの場合はオンにする
+    //     Sword.SetActive(!isSwordOn);
+    //     // 状態を反転
+    //     isSwordOn = !isSwordOn;
+    // }
     private void FrontActionSound()
     {
         // サウンド再生のロジック
@@ -48,13 +48,13 @@ public class Potato : CharacterScript
         // Potato独自の中列行動の処理を追加
     }
 
-    void ToggleShield()
-    {
-        // オンの場合はオフに、オフの場合はオンにする
-        Shield.SetActive(!isShieldOn);
-        // 状態を反転
-        isShieldOn = !isShieldOn;
-    }
+    // void ToggleShield()
+    // {
+    //     // オンの場合はオフに、オフの場合はオンにする
+    //     Shield.SetActive(!isShieldOn);
+    //     // 状態を反転
+    //     isShieldOn = !isShieldOn;
+    // }
     public override void BackAction()
     {
         base.BackAction();
@@ -104,19 +104,19 @@ public class Potato : CharacterScript
     void Start()
     {
         // SwordとShieldオブジェクトを取得
-        Sword = transform.Find("Sword").gameObject;
-        Shield = transform.Find("Shield").gameObject;
+        // Sword = transform.Find("Sword").gameObject;
+        // Shield = transform.Find("Shield").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // マウスの左クリックがされたら
-        if (Input.GetMouseButtonDown(0))
-        {
-            // オンとオフを切り替えるメソッドを呼び出す
-            ToggleSword();
-            ToggleShield();
-        }
+        // // マウスの左クリックがされたら
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     // オンとオフを切り替えるメソッドを呼び出す
+        //     ToggleSword();
+        //     ToggleShield();
+        // }
     }
 }

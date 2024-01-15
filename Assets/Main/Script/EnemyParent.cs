@@ -221,4 +221,9 @@ public abstract class EnemyParent : MonoBehaviour
         }
     }
 
+    public void SetDeathAnime()
+    {
+        Animator anime = gameObject.GetComponent<Animator>();
+        anime.SetBool("death", true);
+    }
 }

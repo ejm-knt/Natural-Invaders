@@ -116,6 +116,7 @@ public class DragObj : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragH
         {
             OnPartySumInfoChanged.Invoke(); //着火しまーす！
         }
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
     }
 
     public delegate void OnPartySumInfoChangedDelegate();

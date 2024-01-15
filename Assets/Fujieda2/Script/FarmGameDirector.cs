@@ -22,22 +22,6 @@ public class FarmGameDirector : MonoBehaviour
 
     public static FarmGameDirector Instance { get; private set; }   //シングルトンインスタンス
 
-    // private void Awake()
-    // {
-    //     // インスタンスが既に存在していた場合は破棄する
-    //     if (Instance != null)
-    //     {
-    //         Destroy(gameObject);
-    //         return;
-    //     }
-
-    //     // このインスタンスをシングルトンインスタンスとして登録
-    //     Instance = this;
-
-    //     // シーン遷移時に破棄されないように設定
-    //     DontDestroyOnLoad(gameObject);
-    // }
-
     // Start is called before the first frame update
     void Awake()//FarmDirectorより先に動いてもらう
     {
@@ -50,24 +34,10 @@ public class FarmGameDirector : MonoBehaviour
         AllCharacters.Add(Character5);
         AllCharacters.Add(Character6);
         AllCharacters.Add(Character7);
-
-        //何も埋っていない畑を用意
-        //植えた時に番号を保存し、シーンを移動しても植えた時と同じ位置にキャラ表示し続ける
-        // PlantedSeedCharacters.Add(null);
-        // PlantedSeedCharacters.Add(null);
-        // PlantedSeedCharacters.Add(null);
-        // PlantedSeedCharacters.Add(null);
-        // PlantedSeedCharacters.Add(null);
-        // PlantedSeedCharacters.Add(null);
     }
     void Update()
     {
 
     }
-    // void RemoveNull()   //partyMemberで死亡した時にAllCharactersにnullが出てしまうためその要素を削除する
-    // {
-    //     AllCharacters.RemoveAll(character => character == null);
-    // }
-
 
 }

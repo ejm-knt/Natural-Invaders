@@ -707,11 +707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2433282509751658717, guid: ba35933c3212aaf49bddf43e61368ac9, type: 3}
       propertyPath: startDelay.scalar
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2433282509751658717, guid: ba35933c3212aaf49bddf43e61368ac9, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 12.18
+      value: 20.28
       objectReference: {fileID: 0}
     - target: {fileID: 2433282510014370360, guid: ba35933c3212aaf49bddf43e61368ac9, type: 3}
       propertyPath: lengthInSec

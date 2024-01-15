@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Tomato : CharacterScript
 {
-    private TomatoBombController2 tomatoBombController2;
+    private TomatoBombController tomatoBombController;
     private void Start()
     {
-        tomatoBombController2 = GetComponent<TomatoBombController2>();
+        tomatoBombController = GetComponentInChildren<TomatoBombController>();
     }
     public Tomato() : base("Tomato", 16, 5, 0, 10, 0, 10)
     {
@@ -15,8 +15,11 @@ public class Tomato : CharacterScript
     }
     public override void FrontAction()
     {
+        // Debug.Log(tomatoBombController2);
+        tomatoBombController.BombThrow();
+        //SEを再生させたい → 下記記述を加える
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se16TomatoAttac3);
         base.FrontAction();
-
     }
 
     private void FrontActionSound()

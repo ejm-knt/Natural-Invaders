@@ -33,12 +33,25 @@ public class BriefingManager : MonoBehaviour
     List<GameObject> frontLine;     //前列のGridObject
     List<GameObject> middleLine;    //中列のGridObject
     private int preSum; //パーティ情報の合計直前情報
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject[] allcharaPrefabs;  //全キャラ種類リスト
+
+    void Awake()
     {
         //gameDirector(js)の取得
         gameDirectorObject = GameObject.Find("GameDirector");
         gameDirector = gameDirectorObject.GetComponent<GameDirector>();
+        List<GameObject> allCharacterList = new List<GameObject>();
+        for (int i = 0; i < 10; i++)
+        {
+            int num = Random.Range(0, allcharaPrefabs.Length);
+            GameObject obj = Instantiate(allcharaPrefabs[num]);
+            allCharacterList.Add(obj);
+        }
+        gameDirector.AllCharacters = allCharacterList;
+    }
+
+    void Start()
+    {
         // PT情報表示用Textの取得
         partySumInfo = partyInfoSumObject.GetComponent<Text>();
         //すべてのキャラクターの分だけインスタンス生成
@@ -79,6 +92,8 @@ public class BriefingManager : MonoBehaviour
         frontLine = new List<GameObject> { grid1, grid2, grid3 };
         middleLine = new List<GameObject> { grid4, grid5, grid6 };
         // SoundManager.instance.PlayBGM(SoundManager.BGM_Type.titel);
+        SoundManager.instance.StopBGM();
+        SoundManager.instance.PlayBGM(SoundManager.BGM_Type.Bgm04PartyEdit);
     }
 
     // Update is called once per frame
@@ -167,6 +182,8 @@ public class BriefingManager : MonoBehaviour
             //警告文
             battleMemberAlert.SetActive(true);
         }
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
+
     }
 
     public void OnClickSortButton()
@@ -210,5 +227,8 @@ public class BriefingManager : MonoBehaviour
             //警告文
             battleMemberAlert.SetActive(true);
         }
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
+
+
     }
 }

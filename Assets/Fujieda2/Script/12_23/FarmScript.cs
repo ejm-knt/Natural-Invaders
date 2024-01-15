@@ -7,11 +7,6 @@ public class FarmScript : MonoBehaviour
 {
     public bool farmField;
 
-    public void FarmNotSeed()//ボタンを押せなくするメソッド
-    {
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {

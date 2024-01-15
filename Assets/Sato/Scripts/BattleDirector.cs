@@ -77,9 +77,15 @@ public class BattleDirector : MonoBehaviour
         enemy = GameObject.FindWithTag("Enemy");
         // enemyという名前のスクリプトをenemyScriptへ代入
         enemyScript = enemy.GetComponent<EnemyParent>();
-
         // enemyにパーティリストを送る
         enemyScript.characters = characterScripts;
+        // PartyにEnemyを送る
+        foreach (CharacterScript cs in characterScripts)
+        {
+            cs.GetEnemyParent();
+        }
+        SoundManager.instance.StopBGM();
+        SoundManager.instance.PlayBGM(SoundManager.BGM_Type.Bgm03Battle);
         // バトルの開始
         yield return StartCoroutine(BattleStart());
         StartCoroutine(BattleMainLoop());
@@ -99,6 +105,7 @@ public class BattleDirector : MonoBehaviour
         while (isWin == false && isLose == false)
         {
             turnCount++;
+            yield return new WaitForSeconds(0.3f);
             //味方のターン        
             yield return StartCoroutine(ActionPlayerTurn());
             if (isWin || isLose)
@@ -236,6 +243,7 @@ public class BattleDirector : MonoBehaviour
         if (enemyScript.EnemyLife <= 0)  //敵のライフが0なら即勝利
         {
             isWin = true;
+            enemyScript.SetDeathAnime();
             EndingStage();
         }
         else
@@ -272,6 +280,7 @@ public class BattleDirector : MonoBehaviour
             ParticleSystem win2ParticleSystem = win2Particle.GetComponent<ParticleSystem>();
             win1ParticleSystem.Play();
             win2ParticleSystem.Play();
+            SoundManager.instance.PlayBGM(SoundManager.BGM_Type.fanfare02);
         }
         if (isLose == true)
         {
@@ -355,6 +364,7 @@ public class BattleDirector : MonoBehaviour
             Vector3 targetPosition = new Vector3(Character.transform.position.x, Character.transform.position.y, posz);
             float jumpHeight = (posz == 1) ? 0.8f : 0.3f;   //左が最後列から前へ飛ぶ高さ、右がその他の列の高さ posz1は位置番手前の列
             StartCoroutine(MoveOverTime(Character, targetPosition, 0.2f, jumpHeight));
+            SoundManager.instance.PlaySE(SoundManager.SE_Type.Se34SkillActivation);
         }
     }
 
@@ -367,9 +377,11 @@ public class BattleDirector : MonoBehaviour
         StartCoroutine(Skill1DmgEnemy());
         isSkillUsed = true;
         playerActed();
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
     }
     IEnumerator Skill1DmgEnemy()
     {
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         int dmg = (int)(enemyScript.EnemyLife * 0.1);
         if (dmg <= 0) { dmg = 1; };
         enemyScript.EnemyLife -= dmg;
@@ -379,12 +391,14 @@ public class BattleDirector : MonoBehaviour
 
     public void OnButtonClickSkill2()
     {
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         StartCoroutine(Skill2Resurrection());
         isSkillUsed = true;
         playerActed();
     }
     IEnumerator Skill2Resurrection()
     {
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         foreach (CharacterScript cs in characterScripts)
         {
             if (cs.isDead == true)
@@ -397,36 +411,45 @@ public class BattleDirector : MonoBehaviour
 
     public void OnButtonClickSkill3()
     {
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         StartCoroutine(Skill3AutoHealAll());
         isSkillUsed = true;
         playerActed();
     }
     IEnumerator Skill3AutoHealAll()
     {
-        RaycastHit hit;
-        foreach (Vector3 pos in AllPositions)
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
+        foreach (CharacterScript cs in characterScripts)
         {
-            Vector3 groundPos = new Vector3(pos.x, 0, pos.z); // y座標を0に設定
-            if (Physics.Raycast(groundPos, Vector3.up, out hit))
-            {
-                CharacterScript characterScript = hit.transform.GetComponent<CharacterScript>();
-                if (characterScript != null)    //そこにキャラクターがいるなら
-                {
-                    characterScript.AutoHeal();
-                    yield return new WaitForSeconds(0.1f);  //0.2秒待って
-                }
-            }
+            cs.AutoHeal();
+            yield return new WaitForSeconds(0.1f);
         }
+        // RaycastHit hit;
+        // foreach (Vector3 pos in AllPositions)
+        // {
+        //     Vector3 groundPos = new Vector3(pos.x, 0, pos.z); // y座標を0に設定
+        //     if (Physics.Raycast(groundPos, Vector3.up, out hit))
+        //     {
+        //         CharacterScript characterScript = hit.transform.GetComponent<CharacterScript>();
+        //         if (characterScript != null)    //そこにキャラクターがいるなら
+        //         {
+        //             characterScript.AutoHeal();
+        //             yield return new WaitForSeconds(0.1f);  //0.2秒待って
+        //         }
+        //     }
+        // }
     }
 
     public void onButtonToStageSelect()
     {
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         //PTMをdontDestroyしてfalseにする
         SetTransitionPtm();
         SceneManager.LoadScene("SelectStageScene");
     }
     public void onButtonToFarm()
     {
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         //PTMをdontDestroyしてfalseにする
         SetTransitionPtm();
         SceneManager.LoadScene("farm");
