@@ -6,8 +6,8 @@ public class Potato : CharacterScript
 {
     private GameObject Sword; // Swordオブジェクト
     private GameObject Shield; // Shieldオブジェクト
-    private bool isSwordOn = false; // Swordオブジェクトのオン/オフの状態を管理
-    private bool isShieldOn = false; // Shieldオブジェクトのオン/オフの状態を管理
+    // private bool isSwordOn = false; // Swordオブジェクトのオン/オフの状態を管理
+    // private bool isShieldOn = false; // Shieldオブジェクトのオン/オフの状態を管理
 
     public Potato() : base("Potato", 25, 5, 0, 0, 15, 0)
     {

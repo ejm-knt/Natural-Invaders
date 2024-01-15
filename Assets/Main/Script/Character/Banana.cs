@@ -13,7 +13,7 @@ public class Banana : CharacterScript
     [SerializeField] ParticleSystem hiteffect2;
 
 
-    public Banana() : base("Banana", 300, 5, 10, 15, 0, 15)
+    public Banana() : base("Banana", 30, 5, 10, 15, 0, 15)
     {
         // 親クラス(CharacterScript)のコンストラクタを呼び出す
         // ここで追加の初期化などを行うこともできます

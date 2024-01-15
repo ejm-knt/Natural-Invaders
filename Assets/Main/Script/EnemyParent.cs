@@ -93,9 +93,9 @@ public abstract class EnemyParent : MonoBehaviour
 
             case EnemyKind.beetle:
                 EnemyName = "beetle";
-                EnemyLife = 20;
+                EnemyLife = 40;
                 EnemyMaxLife = EnemyLife;
-                EnemyAttack = 4;
+                EnemyAttack = 8;
                 EnemyHealValue = enemyHealValue;
                 break;
 
@@ -114,6 +114,7 @@ public abstract class EnemyParent : MonoBehaviour
         chargeObject.transform.position = transform.position;
         ParticleSystem ch = chargeObject.GetComponent<ParticleSystem>();
         ch.Play(); //* 溜めるEffect再生
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se21WeakEnemyAttack);
         EnemyAttack *= EnemyChargeMagnification; //* 2倍Atk
         enemyChargeFlag = true;
     }
@@ -133,6 +134,7 @@ public abstract class EnemyParent : MonoBehaviour
         healObject.transform.position = transform.position;
         ParticleSystem heal = healObject.GetComponent<ParticleSystem>();
         heal.Play(); //* 回復Effect再生
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se48PeachMiddle);
         int tempHpHeal = EnemyLife + EnemyHealValue;
         if (tempHpHeal > EnemyMaxLife)
         {   //! 回復超過。HPMAXLifeを代入
@@ -153,9 +155,12 @@ public abstract class EnemyParent : MonoBehaviour
         ParticleSystem atk = atkObject.GetComponent<ParticleSystem>();
         // testatk.transform.position = targetCharacter.transform.position;
         atk.Play();
+        SetAttackAnime();
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se24EnemyHit);
         // atkParticleObject.transform.position = targetCharacter.transform.position;
         // atkParticleObject.Play();
         targetCharacter.CharacterLife -= enemyAttack - targetCharacter.CharacterDef;
+        
 
         //? 攻撃行動後にEnemyが「溜める」状態だった場合、「溜める」解除。
         if (enemyChargeFlag == true)
@@ -175,6 +180,8 @@ public abstract class EnemyParent : MonoBehaviour
             atkObject.transform.position = Group.transform.position; //* Effect発生位置確定
             ParticleSystem atk = atkObject.GetComponent<ParticleSystem>();
             atk.Play();
+            SetAttackAnime();
+            SoundManager.instance.PlaySE(SoundManager.SE_Type.Se24EnemyHit);
             yield return new WaitUntil(() => atk.isStopped);
         }
 
@@ -221,9 +228,24 @@ public abstract class EnemyParent : MonoBehaviour
         }
     }
 
+    public void SetAttackAnime()
+    {
+        Animator anime = gameObject.GetComponent<Animator>();
+        anime.SetTrigger("attack");
+        StartCoroutine(WaitForAttackAnimationFinish());
+
+    }
+    private IEnumerator WaitForAttackAnimationFinish()
+{
+    yield return new WaitForSeconds(0.5f);
+    
+    Animator anime = gameObject.GetComponent<Animator>();
+    anime.SetTrigger("attackFinished");
+}
     public void SetDeathAnime()
     {
         Animator anime = gameObject.GetComponent<Animator>();
         anime.SetBool("death", true);
+        // SoundManager.instance.PlaySE(SoundManager.Se);
     }
 }

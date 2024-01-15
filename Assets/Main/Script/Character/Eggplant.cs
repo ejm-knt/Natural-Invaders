@@ -8,6 +8,9 @@ public class Eggplant : CharacterScript
     // private GameObject Shield; // Shieldオブジェクト
     // private bool isSwordOn = false; // Swordオブジェクトのオン/オフの状態を管理
     // private bool isShieldOn = false; // Shieldオブジェクトのオン/オフの状態を管理
+    private Vector3 startPos;
+    [SerializeField] ParticleSystem hiteffect1;
+    [SerializeField] ParticleSystem hiteffect2;
 
     public Eggplant() : base("Eggplant", 13, 6, 18, 0, 13, 0, 0)
     {

@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c685d461cec18024a8fd65ca76781f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: {fileID: 0}
   enemy: {fileID: 0}
   position: 0
   isDead: 0
@@ -128,6 +129,8 @@ MonoBehaviour:
   fresh: -5
   attackEffectPrefab: {fileID: 0}
   attackSound: {fileID: 0}
+  hiteffect1: {fileID: 0}
+  hiteffect2: {fileID: 0}
 --- !u!1001 &4804618575498660054
 PrefabInstance:
   m_ObjectHideFlags: 0
