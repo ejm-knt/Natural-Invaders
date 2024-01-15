@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128bcb07a04b39b4792c7345550c315d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: {fileID: 0}
   enemy: {fileID: 0}
   position: 0
   isDead: 0

@@ -36408,7 +36408,7 @@ MonoBehaviour:
   healPrefab: {fileID: 7624606609486947720, guid: 6a03973bb447ee943b3b34145d03c0d3, type: 3}
   chargePrefab: {fileID: 945945755012645889, guid: c32e6172b6860254b8460f5f2bff348b, type: 3}
   characters: []
-  enemyHealValue: 20
+  enemyHealValue: 5
 --- !u!135 &5339460317002060439
 SphereCollider:
   m_ObjectHideFlags: 0

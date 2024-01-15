@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9235549718689635}
   - component: {fileID: 4538054704791536709}
   - component: {fileID: 6681157224485317443}
+  - component: {fileID: 5994015666746465587}
   m_Layer: 0
   m_Name: ChineseCabbage
   m_TagString: Untagged
@@ -107,6 +108,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5994015666746465587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897927476992335284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d367c096f46ed31499a27ca3437a130c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyObject: {fileID: 0}
+  enemy: {fileID: 0}
+  position: 0
+  isDead: 0
+  image: {fileID: 0}
+  isPlanted: 0
+  fresh: -5
+  attackEffectPrefab: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!1001 &7110570234884929811
 PrefabInstance:
   m_ObjectHideFlags: 0
