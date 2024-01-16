@@ -3,7 +3,12 @@ guid: c685d461cec18024a8fd65ca76781f52
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemyObject: {instanceID: 0}
+  - enemy: {instanceID: 0}
+  - image: {instanceID: 0}
+  - attackEffectPrefab: {fileID: 1848657021834969192, guid: d1237a27ce7f9c1478f3d208fef2f873, type: 3}
+  - attackSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

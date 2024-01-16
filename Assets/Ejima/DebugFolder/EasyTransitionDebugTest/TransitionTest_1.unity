@@ -492,7 +492,8 @@ Transform:
   m_LocalPosition: {x: 181.26611, y: 232.69873, z: 16.795341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1727257546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1727257544
@@ -506,7 +507,7 @@ GameObject:
   - component: {fileID: 1727257546}
   - component: {fileID: 1727257547}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TransitionLoadSceneSc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,12 +521,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727257544}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137, y: 233.9562, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -44.266113, y: 1.2574768, z: -16.795341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1146256113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1727257547
 MonoBehaviour:
@@ -791,4 +792,3 @@ SceneRoots:
   - {fileID: 1146256113}
   - {fileID: 634067756}
   - {fileID: 1980138524}
-  - {fileID: 1727257546}

@@ -160,7 +160,7 @@ public abstract class EnemyParent : MonoBehaviour
         // atkParticleObject.transform.position = targetCharacter.transform.position;
         // atkParticleObject.Play();
         targetCharacter.CharacterLife -= enemyAttack - targetCharacter.CharacterDef;
-        
+
 
         //? 攻撃行動後にEnemyが「溜める」状態だった場合、「溜める」解除。
         if (enemyChargeFlag == true)
@@ -236,12 +236,12 @@ public abstract class EnemyParent : MonoBehaviour
 
     }
     private IEnumerator WaitForAttackAnimationFinish()
-{
-    yield return new WaitForSeconds(0.5f);
-    
-    Animator anime = gameObject.GetComponent<Animator>();
-    anime.SetTrigger("attackFinished");
-}
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        Animator anime = gameObject.GetComponent<Animator>();
+        anime.SetTrigger("idle");
+    }
     public void SetDeathAnime()
     {
         Animator anime = gameObject.GetComponent<Animator>();

@@ -105,7 +105,7 @@ public class BattleDirector : MonoBehaviour
         while (isWin == false && isLose == false)
         {
             turnCount++;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.8f);
             //味方のターン        
             yield return StartCoroutine(ActionPlayerTurn());
             if (isWin || isLose)
@@ -445,14 +445,14 @@ public class BattleDirector : MonoBehaviour
         SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         //PTMをdontDestroyしてfalseにする
         SetTransitionPtm();
-        SceneManager.LoadScene("SelectStageScene");
+        // SceneManager.LoadScene("SelectStageScene");
     }
     public void onButtonToFarm()
     {
         SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
         //PTMをdontDestroyしてfalseにする
         SetTransitionPtm();
-        SceneManager.LoadScene("farm");
+        // SceneManager.LoadScene("farm");
     }
 
     public void SetTransitionPtm()

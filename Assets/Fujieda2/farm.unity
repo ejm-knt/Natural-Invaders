@@ -288,6 +288,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a17f047fc3a9646b430b52496c415f, type: 3}
+--- !u!1 &43301399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43301400}
+  - component: {fileID: 43301401}
+  m_Layer: 0
+  m_Name: TransitionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43301400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43301399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 181.26611, y: 232.69873, z: 16.795341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 634148125}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43301401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43301399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61430b0086307cc4da3ccc8d39ae88da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTemplate: {fileID: 5276914992623515724, guid: 616d511151a6c554caddf1c754e4f91d, type: 3}
 --- !u!1 &96633593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1339,52 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 710.3448}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &634148123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634148125}
+  - component: {fileID: 634148124}
+  m_Layer: 0
+  m_Name: TransitionLoadSceneSc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &634148124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634148123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9084bef6fba3d8a49ba291ed90594bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
+  startDelay: 0
+--- !u!4 &634148125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634148123}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -44.266113, y: 1.2574768, z: -16.795341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 43301400}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672122292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8af0a33e665e4aadec4c11fd6841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FRESHCOUNT: 1
   isEnpty: 1
   farmFieldPos: 0
 --- !u!1 &688870695
@@ -1704,7 +1795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6389fe44cc3b3f243ba0ec2cdab1ff62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   farmGameDirector: {fileID: 1194943150}
   eventSystem: {fileID: 1196507413}
 --- !u!4 &705533541
@@ -1814,7 +1904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8af0a33e665e4aadec4c11fd6841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FRESHCOUNT: 1
   isEnpty: 1
   farmFieldPos: 4
 --- !u!114 &711175039
@@ -2175,7 +2264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8af0a33e665e4aadec4c11fd6841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FRESHCOUNT: 1
   isEnpty: 1
   farmFieldPos: 3
 --- !u!114 &770425335
@@ -2458,7 +2546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8af0a33e665e4aadec4c11fd6841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FRESHCOUNT: 1
   isEnpty: 1
   farmFieldPos: 5
 --- !u!114 &859632323
@@ -4163,16 +4250,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 705533540}
-        m_TargetAssemblyTypeName: FarmClickManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 1
+      - m_Target: {fileID: 634148124}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: FuncLoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SelectStageScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1505985366
@@ -4230,6 +4317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b9b67dc5a13d8449117b83014d23a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: {fileID: 0}
   enemy: {fileID: 0}
   position: 0
   isDead: 0
@@ -4435,7 +4523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8af0a33e665e4aadec4c11fd6841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FRESHCOUNT: 1
   isEnpty: 1
   farmFieldPos: 2
 --- !u!114 &1549674439
@@ -4995,7 +5082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8af0a33e665e4aadec4c11fd6841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FRESHCOUNT: 1
   isEnpty: 1
   farmFieldPos: 1
 --- !u!114 &1698608091
@@ -6296,6 +6382,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1748206742}
+  - {fileID: 43301400}
   - {fileID: 1535132889}
   - {fileID: 177820851}
   - {fileID: 1196507414}

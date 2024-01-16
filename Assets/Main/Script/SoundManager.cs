@@ -121,8 +121,8 @@ public class SoundManager : MonoBehaviour
         Se60Button,
         Se61TakingPictureWithCamera,
         Se62AutoHeal,
-
-
+        Se63AssaultTrumpet,
+        Se64ReturnStage,
     }
 
     // クロスフェード時間

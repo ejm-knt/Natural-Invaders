@@ -9,8 +9,7 @@ public class Carrot : CharacterScript
     // private bool isSwordOn = false; // Swordオブジェクトのオン/オフの状態を管理
     // private bool isShieldOn = false; // Shieldオブジェクトのオン/オフの状態を管理
     private Vector3 startPos;
-    [SerializeField] ParticleSystem carrotAttack;
-
+    [SerializeField] private List<ParticleSystem> carrotAttackEffects;
     public Carrot() : base("Carrot", 20, 10, 8, 20, 0, 0, 12)
     {
         // 親クラス(CharacterScript)のコンストラクタを呼び出す
@@ -22,6 +21,7 @@ public class Carrot : CharacterScript
         startPos = gameObject.transform.position;
         StartCoroutine(Move());
         base.FrontAction();
+        PlayCarrotAttackEffects();
         // ToggleSword();
         // 固有キャラの前列行動の処理を追加
     }
@@ -32,7 +32,7 @@ public class Carrot : CharacterScript
         newEnemyPos.y += 2.0f;
         newEnemyPos.z -= 2.0f;
         float duration = 0.4f; // 移動時間
-        float waitTime = 0.2f; // 待機時間
+        float waitTime = 0.4f; // 待機時間
         float elapsed = 0;     // 経過時間
 
         // 最初の位置からEnemyの位置へ移動
@@ -44,7 +44,7 @@ public class Carrot : CharacterScript
         }
 
         // 0.2秒待機
-        carrotAttack.Play();
+        PlayCarrotAttackEffects();
         yield return new WaitForSeconds(waitTime);
         SoundManager.instance.PlaySE(SoundManager.SE_Type.Se04CarrotAttack2);
 
@@ -134,6 +134,18 @@ public class Carrot : CharacterScript
     {
         base.Death();
         // キャラの生死判定
+    }
+    private void PlayCarrotAttackEffects()
+    {
+        foreach (ParticleSystem effect in carrotAttackEffects)
+        {
+            GameObject ef = Instantiate(effect.gameObject);
+            ef.transform.position = gameObject.transform.position;
+            ef.transform.parent = gameObject.transform;
+            // ef.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            effect.Play();
+        }
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se04CarrotAttack2);
     }
 
 
