@@ -235,4 +235,9 @@ public class BriefingManager : MonoBehaviour
 
 
     }
+
+    public void OnClickSuicaButton()
+    {
+        SceneManager.LoadScene("SatoMiniGame");
+    }
 }

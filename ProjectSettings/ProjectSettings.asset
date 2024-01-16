@@ -71,10 +71,10 @@ PlayerSettings:
   androidUseSwappy: 1
   androidBlitType: 0
   androidResizableWindow: 0
-  androidDefaultWindowWidth: 1920
-  androidDefaultWindowHeight: 1080
-  androidMinimumWindowWidth: 400
-  androidMinimumWindowHeight: 300
+  androidDefaultWindowWidth: 1080
+  androidDefaultWindowHeight: 1920
+  androidMinimumWindowWidth: 900
+  androidMinimumWindowHeight: 1600
   androidFullscreenMode: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
@@ -155,9 +155,10 @@ PlayerSettings:
   targetPixelDensity: 30
   resolutionScalingMode: 0
   resetResolutionOnWindowResize: 0
-  androidSupportedAspectRatio: 1
+  androidSupportedAspectRatio: 0
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.DefaultCompany.NaturalInvaders
   buildNumber:
     Standalone: 0
     VisionOS: 0
