@@ -14,7 +14,7 @@ public class BriefingManager : MonoBehaviour
 {
     GameObject gameDirectorObject;
     GameDirector gameDirector;
-
+    [SerializeField] MapGenerator mapGenerator;
     [SerializeField] GameObject memberWindowPrefab;
     [SerializeField] Transform scrollViewContent;
     [SerializeField] GameObject battleMemberAlert;
@@ -223,7 +223,7 @@ public class BriefingManager : MonoBehaviour
                 ptchara.SetActive(true);
             }
             // SceneManager.LoadScene("Battle1");
-
+            mapGenerator.DontDestroyTile();
             TransitionManager.Instance().Transition(_sceneName, transition, startDelay);
         }
         else

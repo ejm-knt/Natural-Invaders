@@ -15,6 +15,7 @@ public class MapGenerator : MonoBehaviour
     const int waterRatio = 20;
     const int grassRatio = 70;
     const int dirtRatio = 10;
+    List<GameObject> tiles = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class MapGenerator : MonoBehaviour
                     if (flagNum <= kvp.Value)   //フラグが立ったらそのブロックを生成
                     {
                         GameObject tile = Instantiate(kvp.Key, new Vector3(i - offsetX, 0, j - offsetZ), Quaternion.identity);
-                        DontDestroyOnLoad(tile);
+                        tiles.Add(tile);
                         break;
                     }
                     else    //立たなかったら次の配列へループ。ランダム数値を調整して次のループへ
@@ -54,9 +55,11 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DontDestroyTile()
     {
-
+        foreach (GameObject tile in tiles)
+        {
+            DontDestroyOnLoad(tile);
+        }
     }
 }

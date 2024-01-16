@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SuicaGenerator : MonoBehaviour
@@ -14,21 +15,9 @@ public class SuicaGenerator : MonoBehaviour
     private int num;    //ランダム用数値
     [SerializeField] private float height;  //クレーンからの高さ
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetNextObject()
     {   //プレビューにランダムイメージをセット
-        num = Random.Range(0, 4);
+        num = Random.Range(0, previewImages.Length);
         nextImage = previewImages[num];
         nextImage.SetActive(true);
     }
@@ -38,7 +27,15 @@ public class SuicaGenerator : MonoBehaviour
         nextObject = suicaDirector.GetObject(prefabs[num]);
         nextObject.transform.SetParent(crane.transform);
         nextObject.transform.localPosition = new Vector2(0, height);
+        Rigidbody2D rb = nextObject.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.gravityScale = 0;
+        }
+        // Debug.Log(nextObject.transform.position);
         nextImage.SetActive(false); //nextImageを非表示にして
         SetNextObject();    //新しいのを作成
     }
+
+
 }
