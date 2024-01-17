@@ -120,14 +120,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c685d461cec18024a8fd65ca76781f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: {fileID: 0}
   enemy: {fileID: 0}
   position: 0
   isDead: 0
   image: {fileID: 0}
   isPlanted: 0
   fresh: -5
-  attackEffectPrefab: {fileID: 0}
+  attackEffectPrefab: {fileID: 1848657021834969192, guid: d1237a27ce7f9c1478f3d208fef2f873, type: 3}
   attackSound: {fileID: 0}
+  carrotAttackEffects:
+  - {fileID: 4021103657954561960, guid: 3bff6e4f68ace464c8fca8646eb8490f, type: 3}
+  - {fileID: 8441734837666183936, guid: f026a22e9d7ca0e49af8fcf3932c143e, type: 3}
+  - {fileID: 6710139492206580334, guid: 99adc15d0f5e6e041add7c9712c2812c, type: 3}
+  - {fileID: 6710139492206580334, guid: 86316b225f8a0ca42b4e70dd9d25f459, type: 3}
+  - {fileID: 6710139492206580334, guid: 1b726e6761fc0f347ba574205d7ef160, type: 3}
+  - {fileID: 6710139492206580334, guid: 7ef4e290913dbdb4a88c39cd5b80cf5b, type: 3}
+  - {fileID: 6710139492206580334, guid: adf8e08d99d417e42a4fc903cf5b14af, type: 3}
+  - {fileID: 6710139492206580334, guid: 79fae3334ddad8249bab2c6f4d005add, type: 3}
+  - {fileID: 6710139492206580334, guid: 5e8493de9e965f143bd9f8440bf4c999, type: 3}
+  - {fileID: 6710139492206580334, guid: 2df225fffa510ee4899e2ef07b69a352, type: 3}
+  - {fileID: 6710139492206580334, guid: bd4cfbb5726c0f54d8bff0793261a76a, type: 3}
 --- !u!1001 &4804618575498660054
 PrefabInstance:
   m_ObjectHideFlags: 0

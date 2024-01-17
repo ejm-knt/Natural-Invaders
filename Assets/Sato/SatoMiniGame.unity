@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8802d148f9c3f33448597f12bcbd4d9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a05817f3d74ae44987cba5b24b1c7e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &308573594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -395,8 +395,13 @@ MonoBehaviour:
   - {fileID: 2544596307892980030, guid: 6de487a581c0c8d43b1333507b213981, type: 3}
   - {fileID: 7189541639824906119, guid: 84ee4b2f5128083439a3c60aa93c8882, type: 3}
   - {fileID: 4273297086675111054, guid: 31eaa3396115d144dabf30a71c71c82a, type: 3}
-  - {fileID: 7375479428703575799, guid: 95a35d2014046b84e838a94d841430e7, type: 3}
   - {fileID: 2633139808716787061, guid: 0dbe12e6f1d357648b066fc240669ce8, type: 3}
+  - {fileID: 4273297086675111054, guid: e787dba0c4ae7b74494af8d1bb76f920, type: 3}
+  - {fileID: 2633139808716787061, guid: 5442d2cdc1c335048ba0181e9a890c18, type: 3}
+  - {fileID: 2633139808716787061, guid: f71a5ca7e4e011441a10a1342f42ac62, type: 3}
+  crane: {fileID: 672709310}
+  suicaGenerator: {fileID: 788418692}
+  scoreText: {fileID: 958023159}
 --- !u!4 &575461875
 Transform:
   m_ObjectHideFlags: 0
@@ -450,7 +455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa7a7300ccec3704e8d06f7aa1fc9a77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe25898a1854b0a4a8decdebee859fe5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -630,7 +635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f2615273dc621f4699ce3561f3c3fb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 605dae5c31c26984589af40acd0b8849, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -689,7 +694,7 @@ MonoBehaviour:
   - {fileID: 7189541639824906119, guid: 84ee4b2f5128083439a3c60aa93c8882, type: 3}
   - {fileID: 4273297086675111054, guid: 31eaa3396115d144dabf30a71c71c82a, type: 3}
   crane: {fileID: 672709310}
-  height: -20
+  height: -2.8
 --- !u!4 &788418693
 Transform:
   m_ObjectHideFlags: 0
@@ -853,7 +858,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1807070364}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1028,7 +1033,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Score
 
-    2000'
+    0'
 --- !u!222 &958023160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1432,7 +1437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 346c50f3f972d7e44b549959699e02a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dcb1430e2421d24ca871dc283f4e603, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1794,11 +1799,11 @@ RectTransform:
   - {fileID: 855665685}
   m_Father: {fileID: 873249363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -30, y: -30}
   m_SizeDelta: {x: 180, y: 50}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1930363065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,7 +1847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1930363066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 575461874}
+        m_TargetAssemblyTypeName: SuicaDirector, Assembly-CSharp
+        m_MethodName: OnBackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1930363066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,6 +2005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crane: {fileID: 672709310}
+  suicaDirector: {fileID: 575461874}
 --- !u!4 &1968547935
 Transform:
   m_ObjectHideFlags: 0

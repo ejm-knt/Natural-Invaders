@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sato/Battle1.unity
     guid: b56213ddf42a7eb47b925f5f3c67d016
+  - enabled: 1
+    path: Assets/Ejima/DebugFolder/EasyTransitionDebugTest/TransitionTest_1.unity
+    guid: 3c6cf70f53af1084281a43d28484674d
+  - enabled: 1
+    path: Assets/Ejima/DebugFolder/EasyTransitionDebugTest/TransitionTest_2.unity
+    guid: 4b5eea06e35172840924b6243e2597e5
   m_configObjects: {}

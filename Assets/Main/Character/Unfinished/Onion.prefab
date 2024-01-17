@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6290726102757316671}
   - component: {fileID: 8541288477271196797}
   - component: {fileID: 8439814219293766059}
+  - component: {fileID: -3753095430258971128}
   m_Layer: 0
   m_Name: Onion
   m_TagString: Untagged
@@ -107,6 +108,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &-3753095430258971128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440448002912344137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6adf9deeccd804cbc0735dcdb731b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyObject: {fileID: 0}
+  enemy: {fileID: 0}
+  position: 0
+  isDead: 0
+  image: {fileID: 0}
+  isPlanted: 0
+  fresh: -5
+  attackEffectPrefab: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!1001 &6686790326507817351
 PrefabInstance:
   m_ObjectHideFlags: 0

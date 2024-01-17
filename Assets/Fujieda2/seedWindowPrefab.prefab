@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.32941177, g: 0.22352943, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -502,12 +502,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6813097231146322407}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a75b632d5ef57ff45b03d0acd5359935, type: 3}
+  m_Script: {fileID: 11500000, guid: feb87e3df10ca26499fea9e8491f2146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlanted: 0
-  image: {fileID: 3084269354563514793}
-  fresh: -1
+  AllCharacters: []
+  PlantedSeedCharacters: []
+  Character1: {fileID: 0}
+  Character2: {fileID: 0}
+  Character3: {fileID: 0}
+  Character4: {fileID: 0}
+  Character5: {fileID: 0}
+  Character6: {fileID: 0}
+  Character7: {fileID: 0}
 --- !u!114 &-1250059264226092455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,8 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  testGameDirector: {fileID: 0}
-  button0: {fileID: 0}
+  farmGameDirector: {fileID: 0}
   eventSystem: {fileID: 0}
 --- !u!1 &8240409363136852765
 GameObject:

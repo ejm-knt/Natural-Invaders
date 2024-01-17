@@ -405,6 +405,7 @@ MonoBehaviour:
   fresh: -5
   attackEffectPrefab: {fileID: 0}
   attackSound: {fileID: 0}
+  potetohit: {fileID: 8525990746615576122, guid: b85d21f3b8fed714bacf0c4fd50fa512, type: 3}
 --- !u!1 &2994765571520026906
 GameObject:
   m_ObjectHideFlags: 0

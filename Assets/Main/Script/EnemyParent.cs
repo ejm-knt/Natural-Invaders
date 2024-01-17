@@ -29,7 +29,7 @@ public abstract class EnemyParent : MonoBehaviour
     //! Enemy詳細ステータス群
     private bool enemyChargeFlag = false;           //!「溜める」管理フラグ
     private int enemyChargeMagnification = 2;       //!「溜める」倍率
-    [SerializeField] private int enemyHealValue;    //! 回復値
+    private int enemyHealValue;    //! 回復値
 
     //! 各getter,setter
     public string EnemyName { get => enemyName; set => enemyName = value; }
@@ -63,7 +63,7 @@ public abstract class EnemyParent : MonoBehaviour
     public event OnLifeChangedDelegate OnLifeChanged;
 
     //! Enemy初期化時のステータス管理
-    public void Initialize(EnemyKind enemyKind, int enemyHealValue)
+    public void Initialize(EnemyKind enemyKind)
     {
         switch (enemyKind)
         {
@@ -72,7 +72,7 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 500;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 100;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             case EnemyKind.mantis:
@@ -80,7 +80,7 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 1000;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 200;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             case EnemyKind.bee:
@@ -88,15 +88,15 @@ public abstract class EnemyParent : MonoBehaviour
                 EnemyLife = 1500;
                 EnemyMaxLife = EnemyLife;
                 EnemyAttack = 300;
-                EnemyHealValue = enemyHealValue;
+                EnemyHealValue = 4;
                 break;
 
             case EnemyKind.beetle:
                 EnemyName = "beetle";
-                EnemyLife = 20;
+                EnemyLife = 40;
                 EnemyMaxLife = EnemyLife;
-                EnemyAttack = 4;
-                EnemyHealValue = enemyHealValue;
+                EnemyAttack = 8;
+                EnemyHealValue = 4;
                 break;
 
             default:
@@ -114,6 +114,7 @@ public abstract class EnemyParent : MonoBehaviour
         chargeObject.transform.position = transform.position;
         ParticleSystem ch = chargeObject.GetComponent<ParticleSystem>();
         ch.Play(); //* 溜めるEffect再生
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se21WeakEnemyAttack);
         EnemyAttack *= EnemyChargeMagnification; //* 2倍Atk
         enemyChargeFlag = true;
     }
@@ -133,6 +134,7 @@ public abstract class EnemyParent : MonoBehaviour
         healObject.transform.position = transform.position;
         ParticleSystem heal = healObject.GetComponent<ParticleSystem>();
         heal.Play(); //* 回復Effect再生
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se48PeachMiddle);
         int tempHpHeal = EnemyLife + EnemyHealValue;
         if (tempHpHeal > EnemyMaxLife)
         {   //! 回復超過。HPMAXLifeを代入
@@ -153,9 +155,12 @@ public abstract class EnemyParent : MonoBehaviour
         ParticleSystem atk = atkObject.GetComponent<ParticleSystem>();
         // testatk.transform.position = targetCharacter.transform.position;
         atk.Play();
+        SetAttackAnime();
+        SoundManager.instance.PlaySE(SoundManager.SE_Type.Se24EnemyHit);
         // atkParticleObject.transform.position = targetCharacter.transform.position;
         // atkParticleObject.Play();
         targetCharacter.CharacterLife -= enemyAttack - targetCharacter.CharacterDef;
+
 
         //? 攻撃行動後にEnemyが「溜める」状態だった場合、「溜める」解除。
         if (enemyChargeFlag == true)
@@ -175,6 +180,8 @@ public abstract class EnemyParent : MonoBehaviour
             atkObject.transform.position = Group.transform.position; //* Effect発生位置確定
             ParticleSystem atk = atkObject.GetComponent<ParticleSystem>();
             atk.Play();
+            SetAttackAnime();
+            SoundManager.instance.PlaySE(SoundManager.SE_Type.Se24EnemyHit);
             yield return new WaitUntil(() => atk.isStopped);
         }
 
@@ -221,9 +228,24 @@ public abstract class EnemyParent : MonoBehaviour
         }
     }
 
+    public void SetAttackAnime()
+    {
+        Animator anime = gameObject.GetComponent<Animator>();
+        anime.SetTrigger("attack");
+        StartCoroutine(WaitForAttackAnimationFinish());
+
+    }
+    private IEnumerator WaitForAttackAnimationFinish()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        Animator anime = gameObject.GetComponent<Animator>();
+        anime.SetTrigger("idle");
+    }
     public void SetDeathAnime()
     {
         Animator anime = gameObject.GetComponent<Animator>();
         anime.SetBool("death", true);
+        // SoundManager.instance.PlaySE(SoundManager.Se);
     }
 }

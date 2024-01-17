@@ -7,6 +7,7 @@ public class Prism : MonoBehaviour
     public int n = 6;// 正n角形のn
     void Start()
     {
+        SoundManager.instance.PlayBGM(SoundManager.BGM_Type.Bgm00Title);
         MeshFilter meshFilter = gameObject.GetComponent<MeshFilter>();// メッシュフィルター
         MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();// メッシュレンダラー
         MeshCollider meshCollider = gameObject.GetComponent<MeshCollider>();// メッシュコライダー

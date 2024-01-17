@@ -227,10 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccf43b059708d14a9c2c9198b98a89f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkParticleObject: {fileID: 4391033006483292113, guid: 75473e3c981570f41ad19ff48648cfe0, type: 3}
-  healParticleObject: {fileID: 8542761753091156785, guid: 6a03973bb447ee943b3b34145d03c0d3, type: 3}
-  chargeParticleObject: {fileID: 3135255916811223704, guid: c32e6172b6860254b8460f5f2bff348b, type: 3}
-  enemyHealValue: 20
+  atkPrefab: {fileID: 0}
+  healPrefab: {fileID: 0}
+  chargePrefab: {fileID: 0}
+  characters: []
+  enemyHealValue: 5
 --- !u!1 &5880017685090389154
 GameObject:
   m_ObjectHideFlags: 0

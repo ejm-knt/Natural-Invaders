@@ -9,6 +9,7 @@ public class SuicaController : MonoBehaviour
     private Vector3 mouseMoveAmount;
     private Vector3 firstCranePos;
     [SerializeField] GameObject crane;
+    [SerializeField] SuicaDirector suicaDirector;
     private float lastTapTime = 0f;
     private const float doubleTapTime = 0.5f;
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class SuicaController : MonoBehaviour
             if (currentTime - lastTapTime <= doubleTapTime)
             {
                 // ダブルタップ時の処理（果物を落とす処理）をここに書く
+                suicaDirector.StartFallObject();
             }
             // タップ時間を更新
             lastTapTime = currentTime;
@@ -47,8 +49,8 @@ public class SuicaController : MonoBehaviour
             float distance = Camera.main.transform.position.z - crane.transform.position.z;
             // distanceをZ座標として使用
             mousePos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, -distance));
-            Debug.Log("test");
-            Debug.Log(mousePos);
+            // Debug.Log("test");
+            // Debug.Log(mousePos);
             mouseMoveAmount = mousePos - mouseFirstPos;
             float craneX = firstCranePos.x + mouseMoveAmount.x;
             craneX = Mathf.Clamp(craneX, -3, 3);

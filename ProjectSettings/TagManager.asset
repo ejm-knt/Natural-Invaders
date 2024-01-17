@@ -12,11 +12,19 @@ TagManager:
   - PartyMember5
   - TomatoBomb
   - ExplosionEffect
-  - miniBanana
+  - FxTemporaire
+  - minibiidama
+  - minicookie
+  - miniTennis
+  - miniBasuke
+  - miniGolf
+  - miniIke
+  - miniMoon
+  - miniEarth
+  - miniTaifu
   - miniPotato
   - miniPumpkin
   - miniTomato
-  - miniPeach
   - miniGrape
   layers:
   - Default

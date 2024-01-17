@@ -8,12 +8,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using EasyTransition;
 
 public class BriefingManager : MonoBehaviour
 {
     GameObject gameDirectorObject;
     GameDirector gameDirector;
-
+    [SerializeField] MapGenerator mapGenerator;
     [SerializeField] GameObject memberWindowPrefab;
     [SerializeField] Transform scrollViewContent;
     [SerializeField] GameObject battleMemberAlert;
@@ -34,7 +35,8 @@ public class BriefingManager : MonoBehaviour
     List<GameObject> middleLine;    //中列のGridObject
     private int preSum; //パーティ情報の合計直前情報
     [SerializeField] GameObject[] allcharaPrefabs;  //全キャラ種類リスト
-
+    public TransitionSettings transition;
+    public float startDelay;
     void Awake()
     {
         //gameDirector(js)の取得
@@ -186,7 +188,7 @@ public class BriefingManager : MonoBehaviour
 
     }
 
-    public void OnClickSortButton()
+    public void OnClickSortButton(string _sceneName)
     {
         //5人以下かどうかチェック
         int battleMemberCount = 0;
@@ -220,7 +222,9 @@ public class BriefingManager : MonoBehaviour
             {
                 ptchara.SetActive(true);
             }
-            SceneManager.LoadScene("Battle1");
+            // SceneManager.LoadScene("Battle1");
+            mapGenerator.DontDestroyTile();
+            TransitionManager.Instance().Transition(_sceneName, transition, startDelay);
         }
         else
         {
@@ -230,5 +234,10 @@ public class BriefingManager : MonoBehaviour
         SoundManager.instance.PlaySE(SoundManager.SE_Type.Se59flingingupandaway);
 
 
+    }
+
+    public void OnClickSuicaButton()
+    {
+        SceneManager.LoadScene("SatoMiniGame");
     }
 }
