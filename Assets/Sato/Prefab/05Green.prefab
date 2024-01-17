@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2672200054078879822}
   m_Layer: 0
   m_Name: 05Green
-  m_TagString: miniGrape
+  m_TagString: miniGolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

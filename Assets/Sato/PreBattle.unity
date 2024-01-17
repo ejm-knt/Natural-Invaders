@@ -3229,6 +3229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8a1c63dd7c7914da492679b7655ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapGenerator: {fileID: 0}
   memberWindowPrefab: {fileID: 1844431890967899785, guid: c860a5099e41aba4f9db7290def53597, type: 3}
   scrollViewContent: {fileID: 565927588}
   battleMemberAlert: {fileID: 1664336115}
@@ -3245,14 +3246,7 @@ MonoBehaviour:
   partyInfoSumObject: {fileID: 647821736}
   allcharaPrefabs:
   - {fileID: 703146583984554863, guid: a4efa6d4b94b8644e9ec666e0db55a87, type: 3}
-  - {fileID: 2326097320587620558, guid: 70bc4419f17fd5c4e95d2f5998a5541d, type: 3}
   - {fileID: 6707865001523104112, guid: 9b3edf3cbccb4a743bb83021cf6bf204, type: 3}
-  - {fileID: 2299824919324493207, guid: b4801905e302ddd4da2f903acaccd9c7, type: 3}
-  - {fileID: 2396944709777011961, guid: 3156d387466a9284cb68b6dd0df48763, type: 3}
-  - {fileID: 2897927476992335284, guid: 4283ae155872e954c97bae9733ad6bd9, type: 3}
-  - {fileID: 7512656097751495328, guid: 9cb2c927c15d2c6459d4e561331a4905, type: 3}
-  - {fileID: 6440448002912344137, guid: e57c879130fd12b47ad39f7ba4104072, type: 3}
-  - {fileID: 3039088416657591417, guid: 301e95ce3b94f8245b701ecd8a1f9cb8, type: 3}
   - {fileID: 7984647168302079227, guid: bcf1fe7d0c279b74d94777c5d57efbfc, type: 3}
   transition: {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
   startDelay: 2.3

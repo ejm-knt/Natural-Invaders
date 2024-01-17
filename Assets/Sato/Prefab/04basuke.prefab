@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4812723423953854068}
   m_Layer: 0
   m_Name: 04basuke
-  m_TagString: miniTomato
+  m_TagString: miniBasuke
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3024728724062190125}
   m_Layer: 0
   m_Name: 02kookie
-  m_TagString: miniPotato
+  m_TagString: minicookie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

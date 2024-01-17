@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2684669113818879015}
   m_Layer: 0
   m_Name: 01biidama
-  m_TagString: miniBanana
+  m_TagString: minibiidama
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
